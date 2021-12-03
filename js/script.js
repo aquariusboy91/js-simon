@@ -36,3 +36,18 @@ function empty_dom() {
    document.writeln("");
 }
 
+//dopo 30 secondi chiedo all'utente un numero e lo inserisco in un array
+user_array = [];
+setTimeout(input_user, 30000);
+
+
+function input_user() {
+    let user_number = parseInt(prompt("inserisci un numero"));
+    return user_number;
+}
+
+let numero_utente = input_user();
+
+user_array.push(numero_utente);
+
+console.log(user_array);
