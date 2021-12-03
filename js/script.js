@@ -38,9 +38,10 @@ function empty_dom() {
 
 //dopo 30 secondi chiedo all'utente un numero e lo inserisco in un array
 
-setTimeout(input_user, 5000);
+setTimeout(input_user, 7000);
 
 let user_array = [];
+let contatore = 0;
 function input_user() {
     i = 0;
     while (i < 5) {
@@ -48,15 +49,17 @@ function input_user() {
         user_array.push(user_number);
         i++;
     }
-    document.writeln("hai beccato i numeri");
+    document.writeln("Numeri ricordati: ");
     for (let index = 0; index < array_rand.length; index++) {
         if(array_rand.includes(user_array[index])) {
+            contatore += 1;
             let numeri_beccati = [];
             numeri_beccati.push(user_array[index]);
             document.writeln(numeri_beccati);
         } 
+        console.log(contatore);
     }
-    
+    document.writeln("Hai totalizzato un punteggio di " + contatore + " su 5");
 }
 
 
