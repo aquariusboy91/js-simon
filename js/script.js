@@ -59,7 +59,7 @@ function input_user() {
         } 
         console.log(contatore);
     }
-    document.writeln("Hai totalizzato un punteggio di " + contatore + " su 5");
+    document.writeln("| Hai totalizzato un punteggio di " + contatore + " su 5");
 }
 
 
