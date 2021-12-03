@@ -13,9 +13,9 @@
 
 //Array numeri casuali 
 
-array_rand = [];
+let array_rand = [];
 
-i=0;
+let i = 0;
 let rand_num = 0;
 while(i < 5) {
     rand_num = Math.floor(Math.random() * 100);
@@ -28,7 +28,7 @@ console.log(array_rand);
 document.writeln(array_rand);
 
 
-//creo una funzione che rimuove i numeri dal dom in 4 secondi
+//creo una funzione che rimuove i numeri dal dom dopo 4 secondi
 
 setTimeout(empty_dom, 4000);
 
@@ -37,17 +37,28 @@ function empty_dom() {
 }
 
 //dopo 30 secondi chiedo all'utente un numero e lo inserisco in un array
-user_array = [];
-setTimeout(input_user, 30000);
 
+setTimeout(input_user, 5000);
 
+let user_array = [];
 function input_user() {
-    let user_number = parseInt(prompt("inserisci un numero"));
-    return user_number;
+    i = 0;
+    while (i < 5) {
+       let user_number = parseInt(prompt("inserisci un numero"));
+        user_array.push(user_number);
+        i++;
+    }
+    document.writeln("hai beccato i numeri");
+    for (let index = 0; index < array_rand.length; index++) {
+        if(array_rand.includes(user_array[index])) {
+            let numeri_beccati = [];
+            numeri_beccati.push(user_array[index]);
+            document.writeln(numeri_beccati);
+        } 
+    }
+    
 }
 
-let numero_utente = input_user();
 
-user_array.push(numero_utente);
 
-console.log(user_array);
+
